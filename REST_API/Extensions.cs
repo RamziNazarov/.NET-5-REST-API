@@ -23,5 +23,15 @@ namespace REST_API
                 Name = product.Name
             };
         }
+        
+        public static ProductWithCategoryResponse ToProductWithCategoryResponse(this Product product)
+        {
+            return new()
+            {
+                Id = product.Id,
+                Name = product.Name,
+                Category = product.Category.Name
+            };
+        }
     }
 }
