@@ -29,6 +29,7 @@ namespace REST_API
         {
             services.AddControllers();
             services.AddSingleton<ICategoryRepository, InMemCategoryRepository>();
+            services.AddSingleton<IProductRepository, InMemProductRepository>();
             services.AddSwaggerGen(c => { c.SwaggerDoc("v1", new OpenApiInfo {Title = "REST_API", Version = "v1"}); });
         }
 

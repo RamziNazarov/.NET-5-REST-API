@@ -19,10 +19,10 @@ namespace REST_API.Controllers
         }
 
         [HttpGet]
-        public async Task<List<CategoryResponse>> GetALl()
+        public async Task<IEnumerable<CategoryResponse>> GetALl()
         {
             var categories = await _categoryRepository.GetAllAsync();
-            return categories.Select(x => x.ToCategoryResponse()).ToList();
+            return categories.Select(x => x.ToCategoryResponse());
         }
     }
 }

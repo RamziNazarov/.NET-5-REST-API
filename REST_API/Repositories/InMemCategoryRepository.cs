@@ -1,14 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using REST_API.DTOs.Category;
 using REST_API.Entities;
 
 namespace REST_API.Repositories
 {
     public class InMemCategoryRepository : ICategoryRepository
     {
-        private List<Category> _categories = new List<Category>
+        private readonly List<Category> _categories = new()
         {
             new Category
             {
@@ -17,7 +16,7 @@ namespace REST_API.Repositories
             }
         };
         
-        public async Task<List<Category>> GetAllAsync()
+        public async Task<IEnumerable<Category>> GetAllAsync()
         {
             return await Task.FromResult(_categories);
         }

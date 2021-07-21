@@ -8,10 +8,10 @@ namespace REST_API.Entities
         public Guid Id { get; init; }
         
         //other columns
-        public string Name { get; set; }
+        public string Name { get; init; }
         
         //foreign keys
-        public Guid CategoryId { get; set; }
+        public Guid CategoryId { get; init; }
         
         //references
         public Category Category { get; set; }

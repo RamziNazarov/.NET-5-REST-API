@@ -9,7 +9,7 @@ namespace REST_API.Entities
         public Guid Id { get; init; }
         
         //other columns
-        public string Name { get; set; }
+        public string Name { get; init; }
         
         //references
         public List<Product> Products { get; set; }
